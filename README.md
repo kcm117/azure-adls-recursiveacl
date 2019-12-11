@@ -1,9 +1,9 @@
 # azure-adls-recursiveacl
-This is a python script to recursively set ADLS Gen2 ACLs for all subdirectories and files belonging to a target directory.  This is a temporary solution until setting ACLs recursively on the server side is available via the SDK.
+This is a python script to recursively set ADLS Gen2 ACLs for all subdirectories and files belonging to a target directory.  This is a temporary solution until setting ACLs recursively on the server side is available via the SDK or Azure Storage Explorer GUI client.
 
 # Requirements:
 - Python 3.7
-- azure-storage-file-datalake --pre (https://pypi.org/project/azure-storage-file-datalake/)
+- ADLS Gen2 Preview SDK (https://pypi.org/project/azure-storage-file-datalake/)
 
 ## Python 3.7 Virtual Environment Creation and Configuration (Windows)
     ```
@@ -31,7 +31,7 @@ This is a python script to recursively set ADLS Gen2 ACLs for all subdirectories
 
 ## Set Desired Permissions
 
-You can set desired permissions for a target directory in the Azure Storage Explorer GUI client by following the directions [here](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer)
+You can set desired permissions for the top-level, target directory in the Azure Storage Explorer GUI client by following the directions [here](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer).  Once you set permissions in the GUI, the idea is that you point the script to the top-level directory to make all child path ACLs match the parent directory ACLs.
 
 ## Running the Script
 
@@ -49,7 +49,7 @@ python adls-acl.py mystorageaccountname rawdata folder1
 
 # Possible Future Enhancements:
 - Performance optimizations
-- Add parameters for friendly names or GUIDs to remove the need for storage explorer.
+- Add parameters for AAD friendly names or GUIDs to remove the need for Storage Explorer.
 
 ## References:
 - SDK Announcement
