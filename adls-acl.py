@@ -51,8 +51,8 @@ if __name__ == '__main__':
     print(f'Storage Account Name: {ACCOUNT_NAME}')
     print(f'File System Name: {FILE_SYSTEM}')
     print('*'*20)
-    print(f'Setting ACLs for all child paths (subdirectories and files) in {TARGET_DIR} to match parent.')
+    print(f'Running: Setting ACLs for all child paths (subdirectories and files) in {TARGET_DIR} to match parent.')
     total_start = time.time() # Start Timing
     asyncio.run(main(TARGET_DIR,filesystem))
     total_end = time.time() # End Timing
-    print("Recursive ACL settings took {} seconds.".format(str(round(total_end - total_start,2))))
+    print("Complete: Recursive ACL configuration took {} seconds.".format(str(round(total_end - total_start,2))))
