@@ -1,6 +1,8 @@
 # azure-adls-recursiveacl
 This is a python script to recursively set ADLS Gen2 ACLs for all subdirectories and files belonging to a target directory.  This is a temporary solution until setting ACLs recursively on the server side is available via the SDK or Azure Storage Explorer GUI client.
 
+This is a sample script to demonstrate functionality and has no implied warranty provided by myself or Microsoft, see the repository LICENSE file for more information.
+
 # Requirements:
 - Python 3.7
 - ADLS Gen2 Preview SDK (https://pypi.org/project/azure-storage-file-datalake/)
@@ -46,8 +48,8 @@ python adls-acl.py mystorageaccountname rawdata folder1/subfolder1/subfolder1-2
 python adls-acl.py mystorageaccountname rawdata folder1
 ```
 
-
 # Possible Future Enhancements:
+- Error handling
 - Performance optimizations
 - Add parameters for AAD friendly names or GUIDs to remove the need for Storage Explorer.
 
