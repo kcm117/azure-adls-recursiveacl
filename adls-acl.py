@@ -10,12 +10,12 @@ def set_permission(path,acl):
     if path.is_directory:
         directory_client = filesystem.get_directory_client(directory=path.name)
         resp = directory_client.set_access_control(acl=acl)
-        # print(f'\tApplied Directory ACL to {path.name}')
+        print(f'\tApplied Directory ACL to {path.name}')
     else:
         file_client = filesystem.get_file_client(path.name)
         # Need to remove "Default" ACL segments from ACL string because that can't be applied to files
         resp = file_client.set_access_control(acl=acl[:acl.find('default')-1])
-        # print(f'\tApplied File ACL to {path.name}')
+        print(f'\tApplied File ACL to {path.name}')
     return resp
 
 async def main(target_dir,filesystem):
